@@ -1,0 +1,143 @@
+{
+  "started": "2026-11-13T19:43:45.837Z",
+  "live": "https://costlens-web-applica-juib.bolt.host",
+  "checks": [
+    {
+      "name": "register",
+      "result": "PASS",
+      "detail": "Fake account A registered and signed in."
+    },
+    {
+      "name": "login",
+      "result": "PASS",
+      "detail": "Account A signed out and signed back in."
+    },
+    {
+      "name": "manual entry",
+      "result": "PASS",
+      "detail": "1000 estimated and 1200 actual saved."
+    },
+    {
+      "name": "fake.exe",
+      "result": "PASS",
+      "detail": "Only .csv and .xlsx files are accepted."
+    },
+    {
+      "name": "unrelated.csv",
+      "result": "PASS",
+      "detail": "Some rows could not be imported:\n\nFile: Missing required column: \"category\". Expected columns: category, description, estimated, actual."
+    },
+    {
+      "name": "oversize.csv",
+      "result": "PASS",
+      "detail": "File is too large. The maximum size is 2 MB."
+    },
+    {
+      "name": "missing.csv",
+      "result": "PASS",
+      "detail": "Some rows could not be imported:\n\nFile: Missing required column: \"actual\". Expected columns: category, description, estimated, actual."
+    },
+    {
+      "name": "CSV import and calculations",
+      "result": "PASS",
+      "detail": "CATEGORY\tDESCRIPTION\tESTIMATED\tACTUAL\tVARIANCE\t% VAR\tACTIONS\nMaterials\tReference overrun\t1,000.00\t1,200.00\t▲ 200.00\t+20.0%\tEditDelete\nLabor\tReference saving\t500.00\t400.00\t▼ 100.00\t-20.0%\tEditDelete\nEquipment\tZero estimate\t0.00\t300.00\t▲ 300.00\tN/A\tEditDelete\nTotal (3 items)\t1,500.00\t1,900.00\t▲ 400.00\t+26.7%\t"
+    },
+    {
+      "name": "charts",
+      "result": "PASS",
+      "detail": "3 canvas charts rendered."
+    },
+    {
+      "name": "AI summary",
+      "result": "PASS",
+      "detail": "HTTP 200; {\"summary\":\"The project \\\"QA Reference Budget 1794599025837\\\" tracks 3 cost items with a total estimated budget of 1,500.00 and actual spending of 1,900.00. The project is over budget by 400.00 (+26.7%). The biggest overage is in \\\"Equipment\\\", which exceeds its estimate by 300.00. The biggest saving is in \\\"Labor\\\", which came in 100.00 under estimate. Other categories over budget: \\\"Materials\\\" (+20.0%). Recommendation: Review the over-budget categories to identify causes and consider corrective action to bring spending back in line with estimates.\",\"source\":\"rules\"}"
+    },
+    {
+      "name": "PDF download",
+      "result": "PASS",
+      "detail": "costlens-qa-reference-budget-1794599025837.pdf"
+    },
+    {
+      "name": "figure10-xss",
+      "result": "PASS",
+      "detail": "Literal value displayed; dialogs=0; table=CATEGORY\tDESCRIPTION\tESTIMATED\tACTUAL\tVARIANCE\t% VAR\tACTIONS\nMaterials\tReference overrun\t1,000.00\t1,200.00\t▲ 200.00\t+20.0%\tEditDelete\nLabor\tReference saving\t500.00\t400.00\t▼ 100.00\t-20.0%\tEditDelete\nEquipment\tZero estimate\t0.00\t300.00\t▲ 300.00\tN/A\tEditDelete\nXSS test\t<img src=x onerror=\"alert(12345)\">\t10.00\t10.00\t0.00\t0.0%\tEditDelete\nTotal (4 items)\t1,510.00\t1,910.00\t▲ 400.00\t+26.5%\t"
+    },
+    {
+      "name": "figure11-csv-injection",
+      "result": "PASS",
+      "detail": "Literal value displayed; dialogs=0; table=CATEGORY\tDESCRIPTION\tESTIMATED\tACTUAL\tVARIANCE\t% VAR\tACTIONS\nMaterials\tReference overrun\t1,000.00\t1,200.00\t▲ 200.00\t+20.0%\tEditDelete\nLabor\tReference saving\t500.00\t400.00\t▼ 100.00\t-20.0%\tEditDelete\nEquipment\tZero estimate\t0.00\t300.00\t▲ 300.00\tN/A\tEditDelete\nXSS test\t<img src=x onerror=\"alert(12345)\">\t10.00\t10.00\t0.00\t0.0%\tEditDelete\nFormula test\t=1+1\t10.00\t10.00\t0.00\t0.0%\tEditDelete\nTotal (5 items)\t1,520.00\t1,920.00\t▲ 400.00\t+26.3%\t"
+    },
+    {
+      "name": "figure12-sql-injection",
+      "result": "PASS",
+      "detail": "Literal value displayed; dialogs=0; table=CATEGORY\tDESCRIPTION\tESTIMATED\tACTUAL\tVARIANCE\t% VAR\tACTIONS\nMaterials\tReference overrun\t1,000.00\t1,200.00\t▲ 200.00\t+20.0%\tEditDelete\nLabor\tReference saving\t500.00\t400.00\t▼ 100.00\t-20.0%\tEditDelete\nEquipment\tZero estimate\t0.00\t300.00\t▲ 300.00\tN/A\tEditDelete\nXSS test\t<img src=x onerror=\"alert(12345)\">\t10.00\t10.00\t0.00\t0.0%\tEditDelete\nFormula test\t=1+1\t10.00\t10.00\t0.00\t0.0%\tEditDelete\nx' OR '1'='1 --\tSynthetic SQL string\t10.00\t10.00\t0.00\t0.0%\tEditDelete\nTotal (6 items)\t1,530.00\t1,930.00\t▲ 400.00\t+26.1%\t"
+    },
+    {
+      "name": "IDOR browser",
+      "result": "PASS",
+      "detail": "Separate account B sees Project not found for account A project."
+    },
+    {
+      "name": "IDOR API projects",
+      "result": "PASS",
+      "detail": "HTTP 200; response []"
+    },
+    {
+      "name": "IDOR API cost_items",
+      "result": "PASS",
+      "detail": "HTTP 200; response []"
+    },
+    {
+      "name": "excessive login requests",
+      "result": "FAIL",
+      "detail": "20 bounded requests; HTTP statuses 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400. No further load sent."
+    },
+    {
+      "name": "browser lockout",
+      "result": "PARTIAL",
+      "detail": "Too many failed attempts. Please wait about 15 minutes and try again."
+    },
+    {
+      "name": "GitHub private-context link",
+      "result": "FAIL",
+      "detail": "GitHub - 03-SF/CostlensAnalysis · GitHub"
+    },
+    {
+      "name": "browser bundle secret scan",
+      "result": "PASS",
+      "detail": "[{\"script\":\"/assets/index-hjEkt7B4.js\",\"status\":200,\"privilegedKeyMatches\":0,\"jwtRoles\":[\"anon\"]}]"
+    }
+  ],
+  "notes": [],
+  "projectId": "58f76c83-355b-4e73-9b48-a93a665212ce",
+  "headers": {
+    "date": "Fri, 13 Nov 2026 19:44:44 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-ray": "a5a045d00fd4f9e1-MCT",
+    "cf-cache-status": "DYNAMIC",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=eVlCokWvX9wrk7a6LvHkG0seixuzbu9zBaGnk%2FFj496hd8B3fgR%2F6BwX27TDkvJCAeIbvnwDlehdIAMyqtPh%2FbpZJm22XNn2yEOakOx4rxU2v6Y4JipSpXe9bXchls4tRdxzoCZrCqqncYzRQcwjnIE6JvHk\"}]}",
+    "age": "0",
+    "cache-control": "public,max-age=0,must-revalidate",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "server": "cloudflare",
+    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+    "vary": "Accept-Encoding",
+    "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+    "x-nf-request-id": "01M7B71R3YG54JVDMD6ZXQ0AD8",
+    "x-powered-by": "Bolt.new",
+    "content-encoding": "br"
+  },
+  "bundleScan": [
+    {
+      "script": "/assets/index-hjEkt7B4.js",
+      "status": 200,
+      "privilegedKeyMatches": 0,
+      "jwtRoles": [
+        "anon"
+      ]
+    }
+  ],
+  "completed": "2026-11-13T19:44:44.792Z"
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-13T19:56:01.343Z",
+  "checks": [
+    {
+      "name": "GitHub fresh context",
+      "result": "PASS",
+      "detail": "HTTP 200; GitHub - 03-SF/CostlensAnalysis · GitHub; no GitHub login"
+    },
+    {
+      "name": "HTTP redirect",
+      "result": "UNVERIFIED",
+      "detail": "HTTP 200; location absent"
+    },
+    {
+      "name": "XLSX live import",
+      "result": "PASS",
+      "detail": "One real XLSX row imported; estimated 100, actual 120."
+    },
+    {
+      "name": "CSV formula import",
+      "result": "PASS",
+      "detail": "Imported formula-like string displayed as '=1+1, with a leading apostrophe."
+    }
+  ]
+}

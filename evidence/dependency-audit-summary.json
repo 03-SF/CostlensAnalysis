@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-11-14 Asia/Karachi",
+  "command": "npm audit --json",
+  "result": "Unresolved findings; no dependency upgrades made",
+  "affected_packages": 7,
+  "severity_counts": {"critical": 2, "high": 2, "moderate": 3},
+  "packages": {
+    "@vitest/mocker": "moderate",
+    "esbuild": "moderate",
+    "tinypool": "critical",
+    "vite": "high",
+    "vite-node": "moderate",
+    "vitest": "critical",
+    "xlsx": "high"
+  },
+  "production_parser_advisories": [
+    "https://github.com/advisories/GHSA-4r6h-8v6p-xvw6",
+    "https://github.com/advisories/GHSA-5pgg-2g8v-p4x9"
+  ],
+  "note": "Counts are affected packages from npm audit, not independently exploitable production vulnerabilities. Tooling and runtime findings need separate remediation."
+}

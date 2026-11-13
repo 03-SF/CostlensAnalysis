@@ -1,0 +1,61 @@
+{
+  "pages": 22,
+  "rendered_pages": 22,
+  "square_brackets": 0,
+  "draft_note_present": false,
+  "embedded_images": 17,
+  "links": [
+    {
+      "page": 1,
+      "uri": "https://costlens-web-applica-juib.bolt.host"
+    },
+    {
+      "page": 1,
+      "uri": "https://github.com/03-SF/CostlensAnalysis"
+    },
+    {
+      "page": 22,
+      "uri": "https://costlens-web-applica-juib.bolt.host"
+    },
+    {
+      "page": 22,
+      "uri": "https://github.com/03-SF/CostlensAnalysis"
+    },
+    {
+      "page": 22,
+      "uri": "../demo/CostLens_Demo.webm"
+    }
+  ],
+  "page_text_lengths": [
+    593,
+    1959,
+    1471,
+    1313,
+    549,
+    268,
+    1346,
+    751,
+    2063,
+    2248,
+    1828,
+    1997,
+    736,
+    1076,
+    1332,
+    807,
+    1574,
+    1543,
+    1621,
+    2371,
+    1828,
+    1949
+  ],
+  "downloaded-budget-report.pdf": {
+    "pages": 1,
+    "text": "CostLens Budget Report\nGenerated: 11/14/2026, 12:44:07 AM\nQA Reference Budget 1794599025837\nSynthetic costs only. Security and calculation evidence.\nProject created: 11/14/2026\nSummary\nMetric Value\nTotal estimated 1,500.00\nTotal actual 1,900.00\nTotal variance 400.00\nOverall % variance +26.7%\nCost items 3\nCost items\nCategory Description Estimated Actual Variance % Var\nMaterials Reference overrun 1,000.00 1,200.00 200.00 +20.0%\nLabor Reference saving 500.00 400.00 -100.00 -20.0%\nEquipment Zero estimate 0.00 300.00 300.00 N/A\nTotal (3) 1,500.00 1,900.00 400.00 +26.7%\nPage 1\nAI budget summary\nThe project \"QA Reference Budget 1794599025837\" tracks 3 cost items with a total estimated budget of 1,500.00\nand actual spending of 1,900.00. The project is over budget by 400.00 (+26.7%). The biggest overage is in\n\"Equipment\", which exceeds its estimate by 300.00. The biggest saving is in \"Labor\", which came in 100.00 under\nestimate. Other categories over budget: \"Materials\" (+20.0%). Recommendation: Review the over-budget categories\nto identify causes and consider corrective action to bring spending back in line with estimates."
+  },
+  "supplemental-import-report.pdf": {
+    "pages": 1,
+    "text": "CostLens Budget Report\nGenerated: 11/14/2026, 12:56:16 AM\nQA Supplemental Import\nProject created: 11/14/2026\nSummary\nMetric Value\nTotal estimated 110.00\nTotal actual 130.00\nTotal variance 20.00\nOverall % variance +18.2%\nCost items 2\nCost items\nCategory Description Estimated Actual Variance % Var\nSpreadsheet Valid XLSX synthetic row 100.00 120.00 20.00 +20.0%\nFormula import '=1+1 10.00 10.00 0.00 0.0%\nTotal (2) 110.00 130.00 20.00 +18.2%\nPage 1"
+  }
+}

@@ -1,7 +1,11 @@
 node_modules/
 dist/
+/output/
 .env
 .env.local
+.env.*
+!.env.example
+tmp/
 *.db
 __pycache__/
 venv/
